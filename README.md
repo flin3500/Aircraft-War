@@ -162,5 +162,30 @@ pygame.quit()			#quit
 
 <br>
 
-### Game Framework
+## Game Framework*
 
+1. Target: use OOP to make an Aircraft game object
+
+### Step 1: Know about the main program
+
+<div align=center>
+   <img src="./readme_img/game_uml.png">
+</div>
+
+1. #### Game init:
+
+   1. Create Game window
+   2. Create Game clock
+   3. Create sprites and sprites Group
+
+2. #### Game loop:
+
+   1. Set refresh rate
+   2. Check User Input
+   3. Check collision
+   4. Update and draw sprites Group
+   5. update the window ```pygame.display.update()```
+
+<br>
+
+## Game background*
