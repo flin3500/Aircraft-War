@@ -197,7 +197,92 @@ pygame.quit()			#quit
    <img src="./readme_img/background_class.png">
 </div>
 
+```python
+class Background(GameSprite):
+    """Background class"""
+
+    def __init__(self, is_alt=False):
+        super().__init__("./images/background.png")
+        if is_alt:
+            self.rect.y = - self.rect.height
+
+    def update(self):
+        super().update()
+        # 1. justify if the img out of window
+        if self.rect.y >= WINDOW_RECT.height:
+            self.rect.y = - self.rect.height
+```
+
 <br>
 
-## Enemy coming*
+## Enemy*
+
+1. #### Timer
+
+   1. Use timer to create an enemy plane in a certain time
+   2. Every second there is a new enemy plane come
+   3. Every enemy plane has different speed
+   4. Use```pygame.time.set_timer(eventid, milliseconds)``` to add timer
+
+2. #### Create event and check this event
+
+   1. Create Time event
+
+      ```python
+      # constant for enemy timer event
+      ENEMY_TIMER = pygame.USEREVENT
+      
+      pygame.time.set_timer(ENEMY_TIMER, 1000)
+      ```
+
+   2. Check event
+
+      ```python
+      def __event_handler(self):    
+          for event in pygame.event.get():
+              if event.type == pygame.QUIT:
+                  AircraftGame.__game_over()
+              elif event.type == ENEMY_TIMER:				#check if it is enmey_timer
+                  print("Enemy come")
+      ```
+
+3. #### Create Enemy
+
+   <div align=center>
+      <img src="./readme_img/enemy_class.png">
+   </div>
+
+   1. Create Enemy class inherit from GameSprite
+
+      1. Overwrite \__init__ method to specify the speed and the position of the enemy plane
+      2. Overwrite update method to kill the enemy plane when it is out of screen
+
+      ```python
+      class Enemy(GameSprite):
+          """Enemy class"""
+      
+          def __init__(self):
+              super().__init__("./images/enemy1.png")
+              self.speed = random.randint(2, 4)
+              self.rect.bottom = 0
+              max_x = WINDOW_RECT.width - self.rect.width
+              self.rect.x = random.randint(0, max_x)
+      
+          def update(self):
+              super().update()
+              if self.rect.y >= WINDOW_RECT.height:
+                  self.kill()
+      ```
+
+   2. Initialize every enemy when the time event occur
+
+      1. Make a enemy_group
+      2. Use event_handler method to check if the time event occer and then create a enemy in the enemy_group
+      3. Use update_sprites method to update enemy_group and draw it
+
+<br>
+
+## Hero*
+
+
 

@@ -13,11 +13,13 @@ class AircraftGame(object):
         # 3. Create sprites and sprites Group
         self.__create_sprites()
 
+        pygame.time.set_timer(ENEMY_TIMER, 1000)
+
     def __create_sprites(self):
         bg1 = Background()
         bg2 = Background(is_alt=True)
         self.back_group = pygame.sprite.Group(bg1, bg2)
-
+        self.enemy_group = pygame.sprite.Group()
 
     def start_game(self):
         while True:
@@ -36,6 +38,9 @@ class AircraftGame(object):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 AircraftGame.__game_over()
+            elif event.type == ENEMY_TIMER:
+                enemy = Enemy()
+                self.enemy_group.add(enemy)
 
     def __check_collision(self):
         pass
@@ -43,6 +48,8 @@ class AircraftGame(object):
     def __update_sprites(self):
         self.back_group.update()
         self.back_group.draw(self.window)
+        self.enemy_group.update()
+        self.enemy_group.draw(self.window)
 
     @staticmethod
     def __game_over():
