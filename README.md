@@ -3,9 +3,9 @@ Aircraft game
 
    * [Preparation](#preparation)<br>
    * [Step 1: Use pygame to create GUI](#step-1-use-pygame-to-create-gui)<br>
-               * [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)<br>
-               * [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)<br>
-               * [Create main window  <em>(LN_03)</em>](#create-main-window--ln_03)<br>
+               * ​             [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)<br>
+               * ​             [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)<br>
+               * ​             [Create main window  <em>(LN_03)</em>](#create-main-window--ln_03)<br>
    * [Step 2: Use image folder](#step-2-use-image-folder)<br>
                * [Load the image (image.load)](#load-the-image-imageload)<br>
                * [Allocate the image (window.blit)](#allocate-the-image-windowblit)<br>
