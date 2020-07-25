@@ -136,4 +136,5 @@ pygame.quit()			#quit
    <img src="./readme_img/sprite.png">
 </div>
 
-<img src="./readme_img/sprites_group.png" align="center">
+<div align=center><img src="./readme_img/sprites_group.png"></div>
+
