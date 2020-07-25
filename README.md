@@ -25,8 +25,6 @@ This is the game I have done when I learn python, all of these are create by Mac
 
    1. This is the folder contains all the images we need
 
-<br>
-
 ### Step 1: Use pygame to create GUI
 
 1. #### Game init and quit   *(LN_01)*
@@ -52,8 +50,6 @@ pygame.quit()			#quit
       | ----------------------------------------------------- | --------------------------- |
       | `pygame.display.update()`                             | update the things in window |
 
-<br>
-
 ### Step 2: Use image folder
 
 1. #### Load the image (image.load)
@@ -72,8 +68,6 @@ pygame.quit()			#quit
 
    1. Create background  *(LN_04)*
    2. Create heroplane  *(LN_05)*
-
-<br>
 
 ### Step 3: Make image move and Game loop
 
@@ -108,21 +102,17 @@ pygame.quit()			#quit
    5. make hero plane will come back from the buttom
 
 5. #### Check user input in game loop *(LN_08)*
-
    1. use ```pygame.event.get() -> list of input``` to get the current user input
-
    2. how to check the quit user input
 
-      ```python
-      for event in pygame.event.get():
-          if event.type == pygame.QUIT:
-              pygame.quit()
-              exit()
-      ```
+   ```python
+   for event in pygame.event.get():
+       if event.type == pygame.QUIT:
+           pygame.quit()
+           exit()
+   ```
 
-   <br>
-
-   ### Step 4: Sprite and Sprite group (OOP)
+### Step 4: Sprite and Sprite group (OOP)
 
 1. #### Sprite is a object that combine image and rect location together (Easy way)
 
@@ -160,8 +150,6 @@ pygame.quit()			#quit
       2. draw sprites group on window  ``group.draw(window)``
       3. update the window ```pygame.display.update()```
 
-<br>
-
 ## Game Framework*
 
 1. Target: use OOP to make an Aircraft game object
@@ -185,8 +173,6 @@ pygame.quit()			#quit
    3. Check collision
    4. Update and draw sprites Group
    5. update the window ```pygame.display.update()```
-
-<br>
 
 ## Game background*
 
@@ -212,8 +198,6 @@ class Background(GameSprite):
         if self.rect.y >= WINDOW_RECT.height:
             self.rect.y = - self.rect.height
 ```
-
-<br>
 
 ## Enemy*
 
@@ -280,9 +264,7 @@ class Background(GameSprite):
       2. Use event_handler method to check if the time event occer and then create a enemy in the enemy_group
       3. Use update_sprites method to update enemy_group and draw it
 
-<br>
-
-## Hero*
+### Hero*
 
 
 
