@@ -1,6 +1,55 @@
-# Aircraft War
+Aircraft Game
+=================
 
-This is the game I have done when I learn python, all of these are create by Mac OS
+   * Table of Aircraft game
+
+      * 1.[Preparation](#preparation)
+        
+            * [Pycharm 2020.1( I think other vision is also fine)](#pycharm-20201-i-think-other-vision-is-also-fine)
+                * [Pygame 2.0.0  You must install v2.0.0  in oder to success](#pygame-200--you-must-install-v200-in-oder-to-success)
+                * [Mac OS Catalina v 10.15.5](#mac-os-catalina-v-10155)
+                * [The image folder](#the-image-folder)
+        
+         * [Step 1: Use pygame to create GUI](#step-1-use-pygame-to-create-gui)
+            * [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)
+            * [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)
+            * [Create main window  <em>(LN_03)</em>](#create-main-window--ln_03)
+         * [Step 2: Use image folder](#step-2-use-image-folder)
+            * [Load the image (image.load)](#load-the-image-imageload)
+            * [Allocate the image (window.blit)](#allocate-the-image-windowblit)
+            * [Update all the window and see the outcome (display.update)](#update-all-the-window-and-see-the-outcome-displayupdate)
+            * [Example <em>(LN_04)</em> <em>(LN_05)</em>](#example-ln_04-ln_05)
+         * [Step 3: Make image move and Game loop](#step-3-make-image-move-and-game-loop)
+            * [How to make image move?](#how-to-make-image-move)
+            * [We have two things to do when we make a game](#we-have-two-things-to-do-when-we-make-a-game)
+            * [Time clock <em>(LN_06)</em>](#time-clock-ln_06)
+            * [Make heroplane move  <em>(LN_07)</em>](#make-heroplane-move--ln_07)
+            * [Check user input in game loop <em>(LN_08)</em>](#check-user-input-in-game-loop-ln_08)
+         * [Step 4: Sprite and Sprite group (OOP)](#step-4-sprite-and-sprite-group-oop)
+            * [Sprite is a object that combine image and rect location together (Easy way)](#sprite-is-a-object-that-combine-image-and-rect-location-together-easy-way)
+            * [Create GameSprite class  <em>(GM_plane_sprites)</em>](#create-gamesprite-class--gm_plane_sprites)
+            * [Use GameSprite and Sprite Group to create enemy <em>(LN_09)</em>](#use-gamesprite-and-sprite-group-to-create-enemy-ln_09)
+      * 2.[Game Framework(use OOP)*](#game-frameworkuse-oop)
+
+         * [Know about the main program](#know-about-the-main-program)
+            * [Game init:](#game-init)
+            * [Game loop:](#game-loop)
+      * 3.[Game background*](#game-background)
+      * 4.[Enemy*](#enemy)
+            * [Timer](#timer)
+                * [Create event and check this event](#create-event-and-check-this-event)
+                * [Create Enemy](#create-enemy)
+      * 5.[Hero and bullet*](#hero-and-bullet)
+            * [Hero](#hero)
+                * [Bullet](#bullet)
+                * [Create hero class](#create-hero-class)
+                * [Move hero](#move-hero)
+                * [Hero can shoot bullet](#hero-can-shoot-bullet)
+                * [Create Bullet class](#create-bullet-class)
+                * [Bullet shoot](#bullet-shoot)
+      * 6.[Collision*](#collision)
+        
+            * [Groupcollide](#groupcollide)
 
 ## Preparation
 
