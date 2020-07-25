@@ -2,56 +2,56 @@ Aircraft game
 =================
 
    * [Preparation](#preparation)<br>
-            * [Pycharm 2020.1( I think other vision is also fine)](#pycharm-20201-i-think-other-vision-is-also-fine)<br>
-            * [Pygame 2.0.0  You must install v2.0.0  in oder to success](#pygame-200--you-must-install-v200-in-oder-to-success)<br>
-            * [Mac OS Catalina v 10.15.5<br>](#mac-os-catalina-v-10155)
-            * [The image folder](#the-image-folder)<br>
-         * [Step 1: Use pygame to create GUI](#step-1-use-pygame-to-create-gui)<br>
-            * [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)<br>
-            * [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)<br>
-            * [Create main window  <em>(LN_03)</em>](#create-main-window--ln_03)<br>
-         * [Step 2: Use image folder](#step-2-use-image-folder)<br>
-            * [Load the image (image.load)](#load-the-image-imageload)<br>
-            * [Allocate the image (window.blit)](#allocate-the-image-windowblit)<br>
-            * [Update all the window and see the outcome (display.update)](#update-all-the-window-and-see-the-outcome-displayupdate)<br>
-            * [Example <em>(LN_04)</em> <em>(LN_05)</em>](#example-ln_04-ln_05)<br>
-         * [Step 3: Make image move and Game loop](#step-3-make-image-move-and-game-loop)<br>
-            * [How to make image move?](#how-to-make-image-move)<br>
-            * [We have two things to do when we make a game](#we-have-two-things-to-do-when-we-make-a-game)<br>
-            * [Time clock <em>(LN_06)</em>](#time-clock-ln_06)<br>
-            * [Make heroplane move  <em>(LN_07)</em>](#make-heroplane-move--ln_07)<br>
-            * [Check user input in game loop <em>(LN_08)</em>](#check-user-input-in-game-loop-ln_08)<br>
-         * [Step 4: Sprite and Sprite group (OOP)](#step-4-sprite-and-sprite-group-oop)<br>
-            * [Sprite is a object that combine image and rect location together (Easy way)](#sprite-is-a-object-that-combine-image-and-rect-location-together-easy-way)<br>
-            * [Create GameSprite class  <em>(GM_plane_sprites)</em>](#create-gamesprite-class--gm_plane_sprites)<br>
-            * [Use GameSprite and Sprite Group to create enemy <em>(LN_09)</em>](#use-gamesprite-and-sprite-group-to-create-enemy-ln_09)<br>
-   * [Game Framework(use OOP)*](#game-frameworkuse-oop)<br>
-         * [Know about the main program](#know-about-the-main-program)<br>
-            * [Game init:](#game-init)<br>
-            * [Game loop:](#game-loop)<br>
-   * [Game background*](#game-background)<br>
-   * [Enemy*](#enemy)<br>
-            * [Timer](#timer)<br>
-            * [Create event and check this event](#create-event-and-check-this-event)<br>
-            * [Create Enemy](#create-enemy)<br>
-   * [Hero and bullet*](#hero-and-bullet)<br>
-            * [Hero](#hero)<br>
-            * [Bullet](#bullet)<br>
-            * [Create hero class](#create-hero-class)<br>
-            * [Move hero](#move-hero)<br>
-            * [Hero can shoot bullet](#hero-can-shoot-bullet)<br>
-            * [Create Bullet class](#create-bullet-class)<br>
-            * [Bullet shoot](#bullet-shoot)<br>
-   * [Collision*](#collision)<br>
-            * [Groupcollide](#groupcollide)<br>
+               * [Pycharm 2020.1( I think other vision is also fine)](#pycharm-20201-i-think-other-vision-is-also-fine)<br>
+               * [Pygame 2.0.0  You must install v2.0.0  in oder to success](#pygame-200--you-must-install-v200-in-oder-to-success)<br>
+               * [Mac OS Catalina v 10.15.5](#mac-os-catalina-v-10155)<br>
+               * [The image folder](#the-image-folder)<br>
+   * [Step 1: Use pygame to create GUI](#step-1-use-pygame-to-create-gui)<br>
+               * [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)<br>
+               * [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)<br>
+               * [Create main window  <em>(LN_03)</em>](#create-main-window--ln_03)<br>
+   * [Step 2: Use image folder](#step-2-use-image-folder)
+               * [Load the image (image.load)](#load-the-image-imageload)
+               * [Allocate the image (window.blit)](#allocate-the-image-windowblit)
+               * [Update all the window and see the outcome (display.update)](#update-all-the-window-and-see-the-outcome-displayupdate)
+               * [Example <em>(LN_04)</em> <em>(LN_05)</em>](#example-ln_04-ln_05)
+   * [Step 3: Make image move and Game loop](#step-3-make-image-move-and-game-loop)
+               * [How to make image move?](#how-to-make-image-move)
+               * [We have two things to do when we make a game](#we-have-two-things-to-do-when-we-make-a-game)
+               * [Time clock <em>(LN_06)</em>](#time-clock-ln_06)
+               * [Make heroplane move  <em>(LN_07)</em>](#make-heroplane-move--ln_07)
+               * [Check user input in game loop <em>(LN_08)</em>](#check-user-input-in-game-loop-ln_08)
+   * [Step 4: Sprite and Sprite group (OOP)](#step-4-sprite-and-sprite-group-oop)
+               * [Sprite is a object that combine image and rect location together (Easy way)](#sprite-is-a-object-that-combine-image-and-rect-location-together-easy-way)
+               * [Create GameSprite class  <em>(GM_plane_sprites)</em>](#create-gamesprite-class--gm_plane_sprites)
+               * [Use GameSprite and Sprite Group to create enemy <em>(LN_09)</em>](#use-gamesprite-and-sprite-group-to-create-enemy-ln_09)
+   * [Game Framework(use OOP)*](#game-frameworkuse-oop)
+         * [Know about the main program](#know-about-the-main-program)
+            * [Game init:](#game-init)
+            * [Game loop:](#game-loop)
+   * [Game background*](#game-background)
+   * [Enemy*](#enemy)
+            * [Timer](#timer)
+            * [Create event and check this event](#create-event-and-check-this-event)
+            * [Create Enemy](#create-enemy)
+   * [Hero and bullet*](#hero-and-bullet)
+            * [Hero](#hero)
+            * [Bullet](#bullet)
+            * [Create hero class](#create-hero-class)
+            * [Move hero](#move-hero)
+            * [Hero can shoot bullet](#hero-can-shoot-bullet)
+            * [Create Bullet class](#create-bullet-class)
+            * [Bullet shoot](#bullet-shoot)
+   * [Collision*](#collision)
+            * [Groupcollide](#groupcollide)
 
 # Preparation
 
-1. #### Pycharm 2020.1( I think other vision is also fine)
+1. ##### Pycharm 2020.1( I think other vision is also fine)
 
 ![pycharm](./readme_img/pycharm.png)
 
-2. #### Pygame 2.0.0  You must install v2.0.0+ in oder to success
+2. ##### Pygame 2.0.0  You must install v2.0.0+ in oder to success
 
    1. There are two ways to install pygame
       1. Terminal -> ```python3 -m pip install -U pygame==2.0.0.dev6 --user```
@@ -60,17 +60,17 @@ Aircraft game
 
    ![pygame_aliens](./readme_img/pygame_aliens.png)
 
-3. #### Mac OS Catalina v 10.15.5
+3. ##### Mac OS Catalina v 10.15.5
 
    1. In this project, all the thing is based on MacOS
 
-4. #### The image folder
+4. ##### The image folder
 
    1. This is the folder contains all the images we need
 
-### Step 1: Use pygame to create GUI
+# Step 1: Use pygame to create GUI
 
-1. #### Game init and quit   *(LN_01)*
+1. ##### Game init and quit   *(LN_01)*
 
 ```python
 import pygame
@@ -80,12 +80,12 @@ print("Game Coding...")	#coding
 pygame.quit()			#quit
 ```
 
-2. #### Know coordinates   *(LN_02)*
+2. ##### Know coordinates   *(LN_02)*
 
    1. ```pygame.Rect(x,y,weith,height)``` is used to create a rectangle.
    2. Upper left corner  is the origin (0,0). We can set all object based on that origin.
 
-3. #### Create main window  *(LN_03)*
+3. ##### Create main window  *(LN_03)*
 
    1. ```pygame.display```
 
@@ -93,32 +93,32 @@ pygame.quit()			#quit
       | ----------------------------------------------------- | --------------------------- |
       | `pygame.display.update()`                             | update the things in window |
 
-### Step 2: Use image folder
+# Step 2: Use image folder
 
-1. #### Load the image (image.load)
+1. ##### Load the image (image.load)
 
    1. Use   ```pygame.image.load()``` to load image
 
-2. #### Allocate the image (window.blit)
+2. ##### Allocate the image (window.blit)
 
    1. Use the windows object to use ```window.blit(image object,(width,height))``` method to allocate the image
 
-3. #### Update all the window and see the outcome (display.update)
+3. ##### Update all the window and see the outcome (display.update)
 
    1. Use```pygame.display.update()``` to update all the window and see the outcome
 
-4. #### Example *(LN_04)* *(LN_05)*
+4. ##### Example *(LN_04)* *(LN_05)*
 
    1. Create background  *(LN_04)*
    2. Create heroplane  *(LN_05)*
 
-### Step 3: Make image move and Game loop
+# Step 3: Make image move and Game loop
 
-1. #### How to make image move?
+1. ##### How to make image move?
 
    1. Refresh frame to make image move
 
-2. #### We have two things to do when we make a game
+2. ##### We have two things to do when we make a game
 
    1. Game init:
       1. Set up windows (Step 1)
@@ -131,12 +131,12 @@ pygame.quit()			#quit
       3. Update image location
       4. Pygame.display.update  *(All)*
 
-3. #### Time clock *(LN_06)*
+3. ##### Time clock *(LN_06)*
 
    1. when in game init, use ```pygame.time.Clock``` to create a clock object
    2. when in game lopp, let clock object use ```tick``` method
 
-4. #### Make heroplane move  *(LN_07)*
+4. ##### Make heroplane move  *(LN_07)*
 
    1. use rect to remember the position of hero
    2. change  position of hero
@@ -144,7 +144,7 @@ pygame.quit()			#quit
    4. use update method
    5. make hero plane will come back from the buttom
 
-5. #### Check user input in game loop *(LN_08)*
+5. ##### Check user input in game loop *(LN_08)*
    1. use ```pygame.event.get() -> list of input``` to get the current user input
    2. how to check the quit user input
 
@@ -155,9 +155,9 @@ pygame.quit()			#quit
            exit()
    ```
 
-### Step 4: Sprite and Sprite group (OOP)
+# Step 4: Sprite and Sprite group (OOP)
 
-1. #### Sprite is a object that combine image and rect location together (Easy way)
+1. ##### Sprite is a object that combine image and rect location together (Easy way)
 
    1. Game init:
       1. Create sprite
@@ -173,7 +173,7 @@ pygame.quit()			#quit
 
 <div align=center><img src="./readme_img/sprites_group.png"></div>
 
-2. #### Create GameSprite class  *(GM_plane_sprites)*
+2. ##### Create GameSprite class  *(GM_plane_sprites)*
 
    1. if a class is not inherit from object, need to super().\__init__()
 
@@ -183,7 +183,7 @@ pygame.quit()			#quit
 
    2. Image have ```get_rec()``` method to return a object
 
-3. #### Use GameSprite and Sprite Group to create enemy *(LN_09)*
+3. ##### Use GameSprite and Sprite Group to create enemy *(LN_09)*
 
    1. Game init:
       1. Create sprite by ```GameSprite("img", speed)```
