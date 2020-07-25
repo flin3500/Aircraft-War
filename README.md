@@ -55,10 +55,56 @@ pygame.quit()			#quit
 1. Use   ```pygame.image.load()```  load the image
 2. Use the windows object to use ```window.blit(image object,(width,height))``` method to allocate the image
 3. Use```pygame.display.update()``` to update all the window and see the outcome
+   1. Create background  *(LN_04)*
+   2. Create heroplane  *(LN_05)*
 
+<br>
 
+### Step 3: Make image move and Game loop
 
-2.1 Create background  *(LN_04)*
+1. How to make image move?
 
-2.2 Create heroplane  *(LN_05)*
+   1. Refresh frame to make image move
 
+2. We have two things to do when we make a game
+
+   1. Game init:
+      1. Set up windows (Step 1)
+      2. Create image and allocate them (Step 2)
+      3. Time clock
+
+   1. Game loop:
+      1. Set refresh rate
+      2. Check User Input
+      3. Update image location
+      4. Pygame.display.update  *(All)*
+
+3. Time clock *(LN_06)*
+
+   1. when in game init, use ```pygame.time.Clock``` to create a clock object
+   2. when in game lopp, let clock object use ```tick``` method
+
+4. Make heroplane move  *(LN_07)*
+
+   1. use rect to remember the position of hero
+   2. change  position of hero
+   3. use blit method(**Remember to blit the background also in order to have only one plane**)
+   4. use update method
+   5. make hero plane will come back from the buttom
+
+5. Check user input in game loop *(LN_08)*
+
+   1. use ```pygame.event.get() -> list of input``` to get the current user input
+
+   2. how to check the quit user input
+
+      ```python
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              pygame.quit()
+              exit()
+      ```
+
+### Step 4: Sprite and Sprite group
+
+1. Sprite is a object that combine image and rect location together

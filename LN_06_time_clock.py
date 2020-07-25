@@ -15,9 +15,10 @@ surface.blit(hero, (200, 500))
 # 3. update window
 pygame.display.update()
 
+# 4. create clock object
+clock = pygame.time.Clock()
 
 while True:
-    pass
-
+    clock.tick(60)  # 60/s
 
 pygame.quit()
