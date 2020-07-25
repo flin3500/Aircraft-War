@@ -1,49 +1,49 @@
 Aircraft game
 =================
 
-   * [Preparation](#preparation)
-            * [Pycharm 2020.1( I think other vision is also fine)](#pycharm-20201-i-think-other-vision-is-also-fine)
-            * [Pygame 2.0.0  You must install v2.0.0  in oder to success](#pygame-200--you-must-install-v200-in-oder-to-success)
-            * [Mac OS Catalina v 10.15.5](#mac-os-catalina-v-10155)
-            * [The image folder](#the-image-folder)
-         * [Step 1: Use pygame to create GUI](#step-1-use-pygame-to-create-gui)
-            * [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)
-            * [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)
-            * [Create main window  <em>(LN_03)</em>](#create-main-window--ln_03)
-         * [Step 2: Use image folder](#step-2-use-image-folder)
-            * [Load the image (image.load)](#load-the-image-imageload)
-            * [Allocate the image (window.blit)](#allocate-the-image-windowblit)
-            * [Update all the window and see the outcome (display.update)](#update-all-the-window-and-see-the-outcome-displayupdate)
-            * [Example <em>(LN_04)</em> <em>(LN_05)</em>](#example-ln_04-ln_05)
-         * [Step 3: Make image move and Game loop](#step-3-make-image-move-and-game-loop)
-            * [How to make image move?](#how-to-make-image-move)
-            * [We have two things to do when we make a game](#we-have-two-things-to-do-when-we-make-a-game)
-            * [Time clock <em>(LN_06)</em>](#time-clock-ln_06)
-            * [Make heroplane move  <em>(LN_07)</em>](#make-heroplane-move--ln_07)
-            * [Check user input in game loop <em>(LN_08)</em>](#check-user-input-in-game-loop-ln_08)
-         * [Step 4: Sprite and Sprite group (OOP)](#step-4-sprite-and-sprite-group-oop)
-            * [Sprite is a object that combine image and rect location together (Easy way)](#sprite-is-a-object-that-combine-image-and-rect-location-together-easy-way)
-            * [Create GameSprite class  <em>(GM_plane_sprites)</em>](#create-gamesprite-class--gm_plane_sprites)
-            * [Use GameSprite and Sprite Group to create enemy <em>(LN_09)</em>](#use-gamesprite-and-sprite-group-to-create-enemy-ln_09)
-   * [Game Framework(use OOP)*](#game-frameworkuse-oop)
-         * [Know about the main program](#know-about-the-main-program)
-            * [Game init:](#game-init)
-            * [Game loop:](#game-loop)
-   * [Game background*](#game-background)
-   * [Enemy*](#enemy)
-            * [Timer](#timer)
-            * [Create event and check this event](#create-event-and-check-this-event)
-            * [Create Enemy](#create-enemy)
-   * [Hero and bullet*](#hero-and-bullet)
-            * [Hero](#hero)
-            * [Bullet](#bullet)
-            * [Create hero class](#create-hero-class)
-            * [Move hero](#move-hero)
-            * [Hero can shoot bullet](#hero-can-shoot-bullet)
-            * [Create Bullet class](#create-bullet-class)
-            * [Bullet shoot](#bullet-shoot)
-   * [Collision*](#collision)
-            * [Groupcollide](#groupcollide)
+   * [Preparation](#preparation)<br>
+            * [Pycharm 2020.1( I think other vision is also fine)](#pycharm-20201-i-think-other-vision-is-also-fine)<br>
+            * [Pygame 2.0.0  You must install v2.0.0  in oder to success](#pygame-200--you-must-install-v200-in-oder-to-success)<br>
+            * [Mac OS Catalina v 10.15.5<br>](#mac-os-catalina-v-10155)
+            * [The image folder](#the-image-folder)<br>
+         * [Step 1: Use pygame to create GUI](#step-1-use-pygame-to-create-gui)<br>
+            * [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)<br>
+            * [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)<br>
+            * [Create main window  <em>(LN_03)</em>](#create-main-window--ln_03)<br>
+         * [Step 2: Use image folder](#step-2-use-image-folder)<br>
+            * [Load the image (image.load)](#load-the-image-imageload)<br>
+            * [Allocate the image (window.blit)](#allocate-the-image-windowblit)<br>
+            * [Update all the window and see the outcome (display.update)](#update-all-the-window-and-see-the-outcome-displayupdate)<br>
+            * [Example <em>(LN_04)</em> <em>(LN_05)</em>](#example-ln_04-ln_05)<br>
+         * [Step 3: Make image move and Game loop](#step-3-make-image-move-and-game-loop)<br>
+            * [How to make image move?](#how-to-make-image-move)<br>
+            * [We have two things to do when we make a game](#we-have-two-things-to-do-when-we-make-a-game)<br>
+            * [Time clock <em>(LN_06)</em>](#time-clock-ln_06)<br>
+            * [Make heroplane move  <em>(LN_07)</em>](#make-heroplane-move--ln_07)<br>
+            * [Check user input in game loop <em>(LN_08)</em>](#check-user-input-in-game-loop-ln_08)<br>
+         * [Step 4: Sprite and Sprite group (OOP)](#step-4-sprite-and-sprite-group-oop)<br>
+            * [Sprite is a object that combine image and rect location together (Easy way)](#sprite-is-a-object-that-combine-image-and-rect-location-together-easy-way)<br>
+            * [Create GameSprite class  <em>(GM_plane_sprites)</em>](#create-gamesprite-class--gm_plane_sprites)<br>
+            * [Use GameSprite and Sprite Group to create enemy <em>(LN_09)</em>](#use-gamesprite-and-sprite-group-to-create-enemy-ln_09)<br>
+   * [Game Framework(use OOP)*](#game-frameworkuse-oop)<br>
+         * [Know about the main program](#know-about-the-main-program)<br>
+            * [Game init:](#game-init)<br>
+            * [Game loop:](#game-loop)<br>
+   * [Game background*](#game-background)<br>
+   * [Enemy*](#enemy)<br>
+            * [Timer](#timer)<br>
+            * [Create event and check this event](#create-event-and-check-this-event)<br>
+            * [Create Enemy](#create-enemy)<br>
+   * [Hero and bullet*](#hero-and-bullet)<br>
+            * [Hero](#hero)<br>
+            * [Bullet](#bullet)<br>
+            * [Create hero class](#create-hero-class)<br>
+            * [Move hero](#move-hero)<br>
+            * [Hero can shoot bullet](#hero-can-shoot-bullet)<br>
+            * [Create Bullet class](#create-bullet-class)<br>
+            * [Bullet shoot](#bullet-shoot)<br>
+   * [Collision*](#collision)<br>
+            * [Groupcollide](#groupcollide)<br>
 
 # Preparation
 
