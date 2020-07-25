@@ -55,11 +55,19 @@ pygame.quit()			#quit
 
 ### Step 2: Use image folder
 
-1. ### Use   ```pygame.image.load()```  load the image
+1. ### Load the image (image.load)
 
-2. ### Use the windows object to use ```window.blit(image object,(width,height))``` method to allocate the image
+   1. Use   ```pygame.image.load()``` to load image
 
-3. ### Use```pygame.display.update()``` to update all the window and see the outcome
+2. ### Allocate the image (window.blit)
+
+   1. Use the windows object to use ```window.blit(image object,(width,height))``` method to allocate the image
+
+3. ### Update all the window and see the outcome (display.update)
+
+   1. Use```pygame.display.update()``` to update all the window and see the outcome
+
+4. ### Example *(LN_04)* *(LN_05)*
 
    1. Create background  *(LN_04)*
    2. Create heroplane  *(LN_05)*
