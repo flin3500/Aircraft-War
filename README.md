@@ -26,7 +26,7 @@ This is the game I have done when I learn python, all of these are create by Mac
 
 ### Step 1: Use pygame to create GUI
 
-1.1 Game init and quit   *(LN_01)*
+1. Game init and quit   *(LN_01)*
 
 ```python
 import pygame
@@ -36,19 +36,17 @@ print("Game Coding...")	#coding
 pygame.quit()			#quit
 ```
 
-1.2 Coordinates   *(LN_02)*
+2. Coordinates   *(LN_02)*
+   1. ```pygame.Rect(x,y,weith,height)``` is used to create a rectangle.
+   2. Upper left corner  is the origin (0,0). We can set all object based on that origin.
 
-```pygame.Rect(x,y,weith,height)``` is used to create a rectangle.
+3. Create main window  *(LN_03)*
 
-Upper left corner  is the origin (0,0). We can set all object based on that origin.
+   1. ```pygame.display```
 
-1.3 Create main window  *(LN_03)*
-
-```pygame.display```
-
-| `pygame.display.set_mode((width,height),flags,depth)` | Initilize the window        |
-| ----------------------------------------------------- | --------------------------- |
-| `pygame.display.update()`                             | update the things in window |
+      | `pygame.display.set_mode((width,height),flags,depth)` | Initilize the window        |
+      | ----------------------------------------------------- | --------------------------- |
+      | `pygame.display.update()`                             | update the things in window |
 
 <br>
 
