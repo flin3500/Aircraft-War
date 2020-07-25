@@ -1,8 +1,8 @@
-Aircraft War
+# Aircraft War
 
 This is the game I have done when I learn python, all of these are create by Mac OS
 
-### Preparation
+## Preparation
 
 1. #### Pycharm 2020.1( I think other vision is also fine)
 
@@ -159,4 +159,8 @@ pygame.quit()			#quit
       1. Update sprites group by ```group.update()```
       2. draw sprites group on window  ``group.draw(window)``
       3. update the window ```pygame.display.update()```
+
+<br>
+
+### Game Framework
 
