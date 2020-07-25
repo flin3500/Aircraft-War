@@ -150,11 +150,9 @@ pygame.quit()			#quit
       2. draw sprites group on window  ``group.draw(window)``
       3. update the window ```pygame.display.update()```
 
-## Game Framework*
+## Game Framework(use OOP)*
 
-1. Target: use OOP to make an Aircraft game object
-
-### Step 1: Know about the main program
+### Know about the main program
 
 <div align=center>
    <img src="./readme_img/game_uml.png">
