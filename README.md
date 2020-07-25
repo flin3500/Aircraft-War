@@ -132,9 +132,6 @@ pygame.quit()			#quit
       2. draw sprites group on window
       3. update the window
 
-<img src="./readme_img/sprite”>
+<img src="./readme_img/sprite.png" align="center">
 
-![sprites_group](./readme_img/sprites_group.png)
-
-
-
+<img src="./readme_img/sprites_group.png" align="center">
