@@ -5,7 +5,7 @@ This is the game I have done when I learn python, all of these are create by Mac
 
 1. Pycharm 2020.1( I think other vision is also fine)
 
-![Screen Shot 2020-07-25 at 10.15.32 am](/Users/lin/Desktop/Screen Shot 2020-07-25 at 10.15.32 am.png)
+![pycharm](./images/pycharm.png)
 
 2. Pygame 2.0.0  **You must install v2.0.0+ in oder to success **
 
