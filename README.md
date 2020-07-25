@@ -16,17 +16,19 @@ This is the game I have done when I learn python, all of these are create by Mac
 
    ![pygame_aliens](./readme_img/pygame_aliens.png)
 
-3. Mac OS Catalina v 10.15.5
+3. ### Mac OS Catalina v 10.15.5
+
    1. In this project, all the thing is based on MacOS
 
-4. The image folder
+4. ### The image folder
+
    1. This is the folder contains all the images we need
 
 <br>
 
 ### Step 1: Use pygame to create GUI
 
-1. Game init and quit   *(LN_01)*
+1. ### Game init and quit   *(LN_01)*
 
 ```python
 import pygame
@@ -36,11 +38,12 @@ print("Game Coding...")	#coding
 pygame.quit()			#quit
 ```
 
-2. Coordinates   *(LN_02)*
+2. ### Coordinates   *(LN_02)*
+
    1. ```pygame.Rect(x,y,weith,height)``` is used to create a rectangle.
    2. Upper left corner  is the origin (0,0). We can set all object based on that origin.
 
-3. Create main window  *(LN_03)*
+3. ### Create main window  *(LN_03)*
 
    1. ```pygame.display```
 
@@ -52,9 +55,12 @@ pygame.quit()			#quit
 
 ### Step 2: Use image folder
 
-1. Use   ```pygame.image.load()```  load the image
-2. Use the windows object to use ```window.blit(image object,(width,height))``` method to allocate the image
-3. Use```pygame.display.update()``` to update all the window and see the outcome
+1. ### Use   ```pygame.image.load()```  load the image
+
+2. ### Use the windows object to use ```window.blit(image object,(width,height))``` method to allocate the image
+
+3. ### Use```pygame.display.update()``` to update all the window and see the outcome
+
    1. Create background  *(LN_04)*
    2. Create heroplane  *(LN_05)*
 
@@ -62,11 +68,11 @@ pygame.quit()			#quit
 
 ### Step 3: Make image move and Game loop
 
-1. How to make image move?
+1. ### How to make image move?
 
    1. Refresh frame to make image move
 
-2. We have two things to do when we make a game
+2. ### We have two things to do when we make a game
 
    1. Game init:
       1. Set up windows (Step 1)
@@ -79,12 +85,12 @@ pygame.quit()			#quit
       3. Update image location
       4. Pygame.display.update  *(All)*
 
-3. Time clock *(LN_06)*
+3. ### Time clock *(LN_06)*
 
    1. when in game init, use ```pygame.time.Clock``` to create a clock object
    2. when in game lopp, let clock object use ```tick``` method
 
-4. Make heroplane move  *(LN_07)*
+4. ### Make heroplane move  *(LN_07)*
 
    1. use rect to remember the position of hero
    2. change  position of hero
@@ -92,7 +98,7 @@ pygame.quit()			#quit
    4. use update method
    5. make hero plane will come back from the buttom
 
-5. Check user input in game loop *(LN_08)*
+5. ### Check user input in game loop *(LN_08)*
 
    1. use ```pygame.event.get() -> list of input``` to get the current user input
 
