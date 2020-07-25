@@ -3,11 +3,11 @@ This is the game I have done when I learn python, all of these are create by Mac
 
 ### Preparation
 
-1. ##### Pycharm 2020.1( I think other vision is also fine)
+1. #### Pycharm 2020.1( I think other vision is also fine)
 
 ![pycharm](./readme_img/pycharm.png)
 
-2. ##### Pygame 2.0.0  **You must install v2.0.0+ in oder to success **
+2. #### Pygame 2.0.0  **You must install v2.0.0+ in oder to success **
 
    1. There are two ways to install pygame
       1. Terminal -> ```python3 -m pip install -U pygame==2.0.0.dev6 --user```
