@@ -120,7 +120,9 @@ pygame.quit()			#quit
               exit()
       ```
 
-### Step 4: Sprite and Sprite group
+   <br>
+
+   ### Step 4: Sprite and Sprite group (OOP)
 
 1. #### Sprite is a object that combine image and rect location together (Easy way)
 
@@ -137,4 +139,24 @@ pygame.quit()			#quit
 </div>
 
 <div align=center><img src="./readme_img/sprites_group.png"></div>
+
+2. #### Create GameSprite class  *(GM_plane_sprites)*
+
+   1. if a class is not inherit from object, need to super().\__init__()
+
+   <div align=center>
+      <img src="./readme_img/GameSprite.png">
+   </div>
+
+   2. Image have ```get_rec()``` method to return a object
+
+3. #### Use GameSprite and Sprite Group to create enemy *(LN_09)*
+
+   1. Game init:
+      1. Create sprite by ```GameSprite("img", speed)```
+      2. Create sprites group by ```pygame.sprite.Group(*args)```
+   2. Game loop:
+      1. Update sprites group by ```group.update()```
+      2. draw sprites group on window  ``group.draw(window)``
+      3. update the window ```pygame.display.update()```
 
