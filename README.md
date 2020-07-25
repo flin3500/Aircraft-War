@@ -1,4 +1,5 @@
-# Aircraft War
+Aircraft War
+
 This is the game I have done when I learn python, all of these are create by Mac OS
 
 ### Preparation
@@ -121,4 +122,19 @@ pygame.quit()			#quit
 
 ### Step 4: Sprite and Sprite group
 
-1. Sprite is a object that combine image and rect location together
+1. #### Sprite is a object that combine image and rect location together (Easy way)
+
+   1. Game init:
+      1. Create sprite
+      2. Create sprites group
+   2. Game loop:
+      1. Update sprites group
+      2. draw sprites group on window
+      3. update the window
+
+![sprite](./readme_img/sprite.png)
+
+![sprites_group](./readme_img/sprites_group.png)
+
+
+
