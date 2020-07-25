@@ -22,24 +22,24 @@ Aircraft game
                * [Create GameSprite class  <em>(GM_plane_sprites)</em>](#create-gamesprite-class--gm_plane_sprites)<br>
                * [Use GameSprite and Sprite Group to create enemy <em>(LN_09)</em>](#use-gamesprite-and-sprite-group-to-create-enemy-ln_09)<br>
    * [Game Framework(use OOP)*](#game-frameworkuse-oop)<br>
-         * [Know about the main program](#know-about-the-main-program)
-            * [Game init:](#game-init)
-            * [Game loop:](#game-loop)
-   * [Game background*](#game-background)
-   * [Enemy*](#enemy)
-            * [Timer](#timer)
-            * [Create event and check this event](#create-event-and-check-this-event)
-            * [Create Enemy](#create-enemy)
-   * [Hero and bullet*](#hero-and-bullet)
-            * [Hero](#hero)
-            * [Bullet](#bullet)
-            * [Create hero class](#create-hero-class)
-            * [Move hero](#move-hero)
-            * [Hero can shoot bullet](#hero-can-shoot-bullet)
-            * [Create Bullet class](#create-bullet-class)
-            * [Bullet shoot](#bullet-shoot)
-   * [Collision*](#collision)
-            * [Groupcollide](#groupcollide)
+         * [Know about the main program](#know-about-the-main-program)<br>
+            * [Game init:](#game-init)<br>
+            * [Game loop:](#game-loop)<br>
+   * [Game background*](#game-background)<br>
+   * [Enemy*](#enemy)<br>
+            * [Timer](#timer)<br>
+            * [Create event and check this event](#create-event-and-check-this-event)<br>
+            * [Create Enemy](#create-enemy)<br>
+   * [Hero and bullet*](#hero-and-bullet)<br>
+            * [Hero](#hero)<br>
+            * [Bullet](#bullet)<br>
+            * [Create hero class](#create-hero-class)<br>
+            * [Move hero](#move-hero)<br>
+            * [Hero can shoot bullet](#hero-can-shoot-bullet)<br>
+            * [Create Bullet class](#create-bullet-class)<br>
+            * [Bullet shoot](#bullet-shoot)<br>
+   * [Collision*](#collision)<br>
+            * [Groupcollide](#groupcollide)<br>
 
 # Preparation
 
