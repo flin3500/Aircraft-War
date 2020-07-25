@@ -1,15 +1,11 @@
-Aircraft Game
+Aircraft game
 =================
 
-   * Table of Aircraft game
-
-      * 1.[Preparation](#preparation)
-        
+   * [Preparation](#preparation)
             * [Pycharm 2020.1( I think other vision is also fine)](#pycharm-20201-i-think-other-vision-is-also-fine)
-                * [Pygame 2.0.0  You must install v2.0.0  in oder to success](#pygame-200--you-must-install-v200-in-oder-to-success)
-                * [Mac OS Catalina v 10.15.5](#mac-os-catalina-v-10155)
-                * [The image folder](#the-image-folder)
-        
+            * [Pygame 2.0.0  You must install v2.0.0  in oder to success](#pygame-200--you-must-install-v200-in-oder-to-success)
+            * [Mac OS Catalina v 10.15.5](#mac-os-catalina-v-10155)
+            * [The image folder](#the-image-folder)
          * [Step 1: Use pygame to create GUI](#step-1-use-pygame-to-create-gui)
             * [Game init and quit   <em>(LN_01)</em>](#game-init-and-quit---ln_01)
             * [Know coordinates   <em>(LN_02)</em>](#know-coordinates---ln_02)
@@ -29,29 +25,27 @@ Aircraft Game
             * [Sprite is a object that combine image and rect location together (Easy way)](#sprite-is-a-object-that-combine-image-and-rect-location-together-easy-way)
             * [Create GameSprite class  <em>(GM_plane_sprites)</em>](#create-gamesprite-class--gm_plane_sprites)
             * [Use GameSprite and Sprite Group to create enemy <em>(LN_09)</em>](#use-gamesprite-and-sprite-group-to-create-enemy-ln_09)
-      * 2.[Game Framework(use OOP)*](#game-frameworkuse-oop)
-
+   * [Game Framework(use OOP)*](#game-frameworkuse-oop)
          * [Know about the main program](#know-about-the-main-program)
             * [Game init:](#game-init)
             * [Game loop:](#game-loop)
-      * 3.[Game background*](#game-background)
-      * 4.[Enemy*](#enemy)
+   * [Game background*](#game-background)
+   * [Enemy*](#enemy)
             * [Timer](#timer)
-                * [Create event and check this event](#create-event-and-check-this-event)
-                * [Create Enemy](#create-enemy)
-      * 5.[Hero and bullet*](#hero-and-bullet)
+            * [Create event and check this event](#create-event-and-check-this-event)
+            * [Create Enemy](#create-enemy)
+   * [Hero and bullet*](#hero-and-bullet)
             * [Hero](#hero)
-                * [Bullet](#bullet)
-                * [Create hero class](#create-hero-class)
-                * [Move hero](#move-hero)
-                * [Hero can shoot bullet](#hero-can-shoot-bullet)
-                * [Create Bullet class](#create-bullet-class)
-                * [Bullet shoot](#bullet-shoot)
-      * 6.[Collision*](#collision)
-        
+            * [Bullet](#bullet)
+            * [Create hero class](#create-hero-class)
+            * [Move hero](#move-hero)
+            * [Hero can shoot bullet](#hero-can-shoot-bullet)
+            * [Create Bullet class](#create-bullet-class)
+            * [Bullet shoot](#bullet-shoot)
+   * [Collision*](#collision)
             * [Groupcollide](#groupcollide)
 
-## Preparation
+# Preparation
 
 1. #### Pycharm 2020.1( I think other vision is also fine)
 
@@ -199,7 +193,7 @@ pygame.quit()			#quit
       2. draw sprites group on window  ``group.draw(window)``
       3. update the window ```pygame.display.update()```
 
-## Game Framework(use OOP)*
+# Game Framework(use OOP)*
 
 ### Know about the main program
 
@@ -221,7 +215,7 @@ pygame.quit()			#quit
    4. Update and draw sprites Group
    5. update the window ```pygame.display.update()```
 
-## Game background*
+# Game background*
 
 1. Use two background images, place one on another, swipe down this two image together. When the buttom one disappear at the buttom, move it to the top, continuely doing that, make the background moving.
 2. Create a Background class which inherit the GameSprite class, also overwrite the update method with jusitify if the background already out of the window.
@@ -246,7 +240,7 @@ class Background(GameSprite):
             self.rect.y = - self.rect.height
 ```
 
-## Enemy*
+# Enemy*
 
 1. #### Timer
 
@@ -311,7 +305,7 @@ class Background(GameSprite):
       2. Use event_handler method to check if the time event occer and then create a enemy in the enemy_group
       3. Use update_sprites method to update enemy_group and draw it
 
-## Hero and bullet*
+# Hero and bullet*
 
 1. #### Hero
 
@@ -488,7 +482,7 @@ class Background(GameSprite):
               self.bullets.add(bullet)
       ```
 
-## Collision*
+# Collision*
 
 1. #### Groupcollide
 
