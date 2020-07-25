@@ -14,7 +14,10 @@ class AircraftGame(object):
         self.__create_sprites()
 
     def __create_sprites(self):
-        pass
+        bg1 = Background()
+        bg2 = Background(is_alt=True)
+        self.back_group = pygame.sprite.Group(bg1, bg2)
+
 
     def start_game(self):
         while True:
@@ -38,7 +41,8 @@ class AircraftGame(object):
         pass
 
     def __update_sprites(self):
-        pass
+        self.back_group.update()
+        self.back_group.draw(self.window)
 
     @staticmethod
     def __game_over():

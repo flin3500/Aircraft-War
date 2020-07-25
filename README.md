@@ -189,3 +189,15 @@ pygame.quit()			#quit
 <br>
 
 ## Game background*
+
+1. Use two background images, place one on another, swipe down this two image together. When the buttom one disappear at the buttom, move it to the top, continuely doing that, make the background moving.
+2. Create a Background class which inherit the GameSprite class, also overwrite the update method with jusitify if the background already out of the window.
+
+<div align=center>
+   <img src="./readme_img/background_class.png">
+</div>
+
+<br>
+
+## Enemy coming*
+
