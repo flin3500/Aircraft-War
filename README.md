@@ -5,25 +5,19 @@ This is the game I have done when I learn python, all of these are create by Mac
 
 1. Pycharm 2020.1( I think other vision is also fine)
 
-![pycharm](./images/pycharm.png)
+![pycharm](./readme_img/pycharm.png)
 
 2. Pygame 2.0.0  **You must install v2.0.0+ in oder to success **
-
-There are two ways to install pygame
-
-One: Terminal -> ```python3 -m pip install -U pygame==2.0.0.dev6 --user```
-
-Two: Pycharm -> Preference -> Project -> Project Interpreter -> + ->search pygame -> specify v2.0.0+
-
-Then, use `python3 -m pygame.examples.aliens` to check if it is install successfully, if sucessful, it will run a game on your laptop.
+   1. There are two ways to install pygame
+      1. One: Terminal -> ```python3 -m pip install -U pygame==2.0.0.dev6 --user```
+      2. Two: Pycharm -> Preference -> Project -> Project Interpreter -> + ->search pygame -> specify v2.0.0+
+   2. Then, use `python3 -m pygame.examples.aliens` to check if it is install successfully, if sucessful, it will run a game on your laptop.
 
 3. Mac OS Catalina v 10.15.5
-
-In this project, all the thing is based on MacOS
+   1. In this project, all the thing is based on MacOS
 
 4. The image folder
-
-This is the folder contains all the images we need
+   1. This is the folder contains all the images we need
 
 <br>
 
