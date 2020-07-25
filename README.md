@@ -8,7 +8,7 @@ This is the game I have done when I learn python, all of these are create by Mac
 
 ![pycharm](./readme_img/pycharm.png)
 
-2. #### Pygame 2.0.0  **You must install v2.0.0+ in oder to success **
+2. #### Pygame 2.0.0  You must install v2.0.0+ in oder to success
 
    1. There are two ways to install pygame
       1. Terminal -> ```python3 -m pip install -U pygame==2.0.0.dev6 --user```
@@ -262,7 +262,198 @@ class Background(GameSprite):
       2. Use event_handler method to check if the time event occer and then create a enemy in the enemy_group
       3. Use update_sprites method to update enemy_group and draw it
 
-### Hero*
+## Hero and bullet*
 
+1. #### Hero
 
+   1. Hero is 120px away from the buttom. When the game begins, hero will at the center of the window
+   2. 3 bullets/ 0.5 second
+   3. Hero cannot move in default, only move when get commend from keyboard, so the origin speed is 0.
+
+2. #### Bullet
+
+   1. Bullet is shooting in a line
+   2. When it is out of window, need to be delete from bullet_group
+   3. The speed of bullet needs to be a nagetive number
+
+   <div align=center>
+      <img src="./readme_img/hero_bullet.png">
+   </div>
+
+3. #### Create hero class
+
+   1. Create hero class inherit from GameSprite
+      1. Overwrite \__init__ method to specify the speed and the position of the hero
+
+      2. Overwrite update to specify the speed of hero
+
+      3. have a fire() method which can shoot bullet
+
+         ```python
+         class Hero(GameSprite):
+             """Hero class"""
+             def __init__(self):
+                 super().__init__("./images/me1.png", 0)
+                 self.rect.centerx = WINDOW_RECT.centerx
+                 self.rect.bottom = WINDOW_RECT.bottom - 120
+         ```
+
+4. #### Move hero
+
+   1. There are two ways to get the input,
+
+      1. the **first** is traverse the event type. In this way, need to continuous press button.
+
+         ```python
+         elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
+             print("right")
+         ```
+
+      2. the **second** is use ```pygame.key.get_pressed() -> all button tuple``` **Recommend**
+
+         ```python
+         keys_pressed = pygame.key.get_pressed()
+         if keys_pressed[pygame.K_RIGHT]:
+             print("right")```
+         ```
+
+   2. Move hero
+
+      1. Change the update of hero, if get button press, then give hero a speed to move horizontal
+
+         ```python
+         def update(self):
+             self.rect.x += self.speed
+         ```
+
+      2. Set the speed of hero when get keyboard input 
+
+         ```python
+         keys_pressed = pygame.key.get_pressed()
+         if keys_pressed[pygame.K_RIGHT]:
+             self.hero.speed = 3
+         elif keys_pressed[pygame.K_LEFT]:
+             self.hero.speed = -3
+         else:
+             self.hero.speed = 0
+         ```
+
+   3. Avoid hero going out
+
+      1. check the x and right of hero and set a number, if the hero is out of that number, pull it back by reseting its x value
+
+         ```python
+         def update(self):
+             self.rect.x += self.speed
+             if self.rect.x < 0:
+                 self.rect.x = 0
+             elif self.rect.right > WINDOW_RECT.right:
+                 self.rect.right = WINDOW_RECT.right
+         ```
+
+5. #### Hero can shoot bullet
+
+   1. set timer for shooting 
+
+      ```python
+      BULLET_TIMER = pygame.USEREVENT + 1 # because the pygame.USEREVENT used by enemy
+      ```
+
+   2. use set_timer in the \__init__ method
+
+      ```python
+      def __init__(self):
+      	pygame.time.set_timer(BULLET_TIMER, 500)
+      ```
+
+   3. check the event in game loop
+
+6. #### Create Bullet class
+
+   1. Create bullet class inherit from GameSprite
+
+      1. Overwrite \__init__ method to specify the speed of bullet
+
+      2. Overwrite update method to kill the bullet when it is out of window
+
+         ```python
+         class Bullet(GameSprite):
+             """Bullet class"""
+         
+             def __init__(self):
+                 super().__init__("./images/bullet1.png", -2)
+         
+             def update(self):
+                 super().update()
+                 if self.rect.bottom < 0:
+                     self.kill()
+         
+             def __del__(self):
+                 print("kill")
+         ```
+
+7.  #### Bullet shoot
+
+   1. Make a bullet_group in Hero class
+
+      ```python
+      class Hero(GameSprite):
+      	def __init__(self):
+      		self.bullets = pygame.sprite.Group()
+      ```
+
+   2. Use update_sprites method to update bullet_group and draw it
+
+      ```python
+      def __update_sprites(self):
+      	self.hero.bullets.update()
+              self.hero.bullets.draw(self.window)
+      ```
+
+   3. Change the fire method of hero to shoot bullet
+
+      ```python
+      def fire(self):
+          # 1. Make a bullet sprites
+          bullet = Bullet()
+          # 2. Set the position
+          bullet.rect.bottom = self.rect.y - 20
+          bullet.rect.centerx = self.rect.centerx
+          # 3. add it to group
+          self.bullets.add(bullet)
+      ```
+
+   4. Shoot 3 bullets at one time
+
+      Use a loop to shoot and set the position
+
+      ```python
+      def fire(self):
+          for i in (0, 1, 2):
+              # 1. Make a bullet sprites
+              bullet = Bullet()
+              # 2. Set the position
+              bullet.rect.bottom = self.rect.y - i * 20 # set the position
+              bullet.rect.centerx = self.rect.centerx
+              # 3. add it to group
+              self.bullets.add(bullet)
+      ```
+
+## Collision*
+
+1. #### Groupcollide
+
+   ```pygame.sprite.groupcollide(group1, group2, dokill1, dokill2, collided = None) -> Sprite_dict```
+
+   1. dokill1 is for group1 and dokill2 is for group2, when dokill is True, the object which collide will be destroyed.
+
+      ```python
+      def __check_collision(self):
+          # 1. bullet kill enemy
+          pygame.sprite.groupcollide(self.hero.bullets, self.enemy_group, True, True)
+          # 2. Enemy kill hero
+          collide = pygame.sprite.groupcollide(self.hero_group, self.enemy_group, True, True)
+          if len(collide) > 0:
+              AircraftGame.__game_over()
+      ```
 

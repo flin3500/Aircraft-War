@@ -14,12 +14,15 @@ class AircraftGame(object):
         self.__create_sprites()
 
         pygame.time.set_timer(ENEMY_TIMER, 1000)
+        pygame.time.set_timer(BULLET_TIMER, 500)
 
     def __create_sprites(self):
         bg1 = Background()
         bg2 = Background(is_alt=True)
         self.back_group = pygame.sprite.Group(bg1, bg2)
         self.enemy_group = pygame.sprite.Group()
+        self.hero = Hero()
+        self.hero_group = pygame.sprite.Group(self.hero)
 
     def start_game(self):
         while True:
@@ -41,15 +44,33 @@ class AircraftGame(object):
             elif event.type == ENEMY_TIMER:
                 enemy = Enemy()
                 self.enemy_group.add(enemy)
+            elif event.type == BULLET_TIMER:
+                self.hero.fire()
+        keys_pressed = pygame.key.get_pressed()
+        if keys_pressed[pygame.K_RIGHT]:
+            self.hero.speed = 3
+        elif keys_pressed[pygame.K_LEFT]:
+            self.hero.speed = -3
+        else:
+            self.hero.speed = 0
 
     def __check_collision(self):
-        pass
+        # 1. bullet kill enemy
+        pygame.sprite.groupcollide(self.hero.bullets, self.enemy_group, True, True)
+        # 2. Enemy kill hero
+        collide = pygame.sprite.groupcollide(self.hero_group, self.enemy_group, True, True)
+        if len(collide) > 0:
+            AircraftGame.__game_over()
 
     def __update_sprites(self):
         self.back_group.update()
         self.back_group.draw(self.window)
         self.enemy_group.update()
         self.enemy_group.draw(self.window)
+        self.hero_group.update()
+        self.hero_group.draw(self.window)
+        self.hero.bullets.update()
+        self.hero.bullets.draw(self.window)
 
     @staticmethod
     def __game_over():

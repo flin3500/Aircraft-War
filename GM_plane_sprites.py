@@ -7,6 +7,8 @@ WINDOW_RECT = pygame.Rect(0, 0, 480, 700)
 FRAME_PER_SEC = 60
 # constant for enemy timer event
 ENEMY_TIMER = pygame.USEREVENT
+# constant for bullet timer event
+BULLET_TIMER = pygame.USEREVENT + 1
 
 
 class GameSprite(pygame.sprite.Sprite):
@@ -50,4 +52,44 @@ class Enemy(GameSprite):
     def update(self):
         super().update()
         if self.rect.y >= WINDOW_RECT.height:
+            self.kill()
+
+
+class Hero(GameSprite):
+    """Hero class"""
+
+    def __init__(self):
+        super().__init__("./images/me1.png", 0)
+        self.rect.centerx = WINDOW_RECT.centerx
+        self.rect.bottom = WINDOW_RECT.bottom - 120
+
+        self.bullets = pygame.sprite.Group()
+
+    def update(self):
+        self.rect.x += self.speed
+        if self.rect.x < 0:
+            self.rect.x = 0
+        elif self.rect.right > WINDOW_RECT.right:
+            self.rect.right = WINDOW_RECT.right
+
+    def fire(self):
+        for i in (0, 1, 2):
+            # 1. Make a bullet sprites
+            bullet = Bullet()
+            # 2. Set the position
+            bullet.rect.bottom = self.rect.y - i * 20
+            bullet.rect.centerx = self.rect.centerx
+            # 3. add it to group
+            self.bullets.add(bullet)
+
+
+class Bullet(GameSprite):
+    """Bullet class"""
+
+    def __init__(self):
+        super().__init__("./images/bullet1.png", -2)
+
+    def update(self):
+        super().update()
+        if self.rect.bottom < 0:
             self.kill()
