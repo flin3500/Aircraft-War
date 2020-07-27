@@ -13,7 +13,7 @@ class AircraftGame(object):
         # 3. Create sprites and sprites Group
         self.__create_sprites()
 
-        pygame.time.set_timer(ENEMY_TIMER, 1000)
+        pygame.time.set_timer(ENEMY_TIMER, 500)
         pygame.time.set_timer(BULLET_TIMER, 500)
 
     def __create_sprites(self):
@@ -80,5 +80,6 @@ class AircraftGame(object):
 
 
 if __name__ == '__main__':
-    game = AircraftGame()
+    game = AircraftGame(
+    )
     game.start_game()
